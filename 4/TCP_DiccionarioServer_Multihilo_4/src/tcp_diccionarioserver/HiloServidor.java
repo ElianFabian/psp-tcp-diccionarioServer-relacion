@@ -114,7 +114,7 @@ class HiloServidor extends Thread
             // <editor-fold desc="Consultar palabra" defaultstate="collapsed">
             if ((m = patConsulta.matcher(lineaRecibida)).matches())
             {
-                var palabra = m.group(1);
+                final var palabra = m.group(1);
 
                 if (diccionario.containsKey(palabra))
                 {
