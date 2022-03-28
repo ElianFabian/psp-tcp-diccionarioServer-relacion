@@ -104,7 +104,8 @@ class HiloServidor extends Thread
             // <editor-fold desc="Consultar palabra" defaultstate="collapsed">
             if ((m = patConsulta.matcher(lineaRecibida)).matches())
             {
-                var palabra = m.group(1);
+                final var palabra = m.group(1);
+
                 if (diccionario.containsKey(palabra))
                 {
                     //               dic> palabra:significado
@@ -121,8 +122,8 @@ class HiloServidor extends Thread
             // <editor-fold desc="Asignar significado" defaultstate="collapsed">
             else if ((m = patAsignacion.matcher(lineaRecibida)).matches())
             {
-                var palabra = m.group(1);
-                var significado = m.group(2);
+                final var palabra = m.group(1);
+                final var significado = m.group(2);
 
                 if (diccionario.containsKey(palabra))
                 {
