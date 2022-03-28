@@ -108,7 +108,8 @@ class HiloServidor extends Thread
             // <editor-fold desc="Consultar palabra" defaultstate="collapsed">
             if ((m = patConsulta.matcher(lineaRecibida)).matches())
             {
-                var palabra = m.group(1);
+                final var palabra = m.group(1);
+
                 if (diccionario.containsKey(palabra))
                 {
                     //               dic> palabra:significado
@@ -125,8 +126,8 @@ class HiloServidor extends Thread
             // <editor-fold desc="Asignar significado" defaultstate="collapsed">
             else if ((m = patAsignacion.matcher(lineaRecibida)).matches())
             {
-                var palabra = m.group(1);
-                var significado = m.group(2);
+                final var palabra = m.group(1);
+                final var significado = m.group(2);
 
                 if (diccionario.containsKey(palabra))
                 {
@@ -140,7 +141,7 @@ class HiloServidor extends Thread
             //<editor-fold desc="Palabras que empiezan con" defaultstate="collapsed">     
             else if ((m = patPalabrasComiezanCon.matcher(lineaRecibida)).matches())
             {
-                var comienzo = m.group(1);
+                final var comienzo = m.group(1);
 
                 final var palabrasCoincidentes = new StringBuilder("");
 
@@ -155,7 +156,7 @@ class HiloServidor extends Thread
             //<editor-fold desc="Palabras que terminan con" defaultstate="collapsed">
             else if ((m = patPalabrasTerminanCon.matcher(lineaRecibida)).matches())
             {
-                var fin = m.group(1);
+                final var fin = m.group(1);
 
                 final var palabrasCoincidentes = new StringBuilder("");
 
